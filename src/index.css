@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Base Buttons */
+  .btn {
+    @apply rounded-xl border shadow;
+  }
+  .btn-blue {
+    @apply border-gray-200 px-4 py-2 text-sm text-gray-600 font-semibold hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none;
+  }
+
+   /* Base Input */
+  .input-search-rounded {
+    @apply border border-gray-200 bg-white h-10 px-3 rounded-xl focus:outline-none text-lg shadow focus:ring-2 focus:ring-blue-600 focus:ring-offset-2
+  }
+
+  /* Components */
+  .pokemon-search {
+    @apply flex flex-col items-center space-y-10 pt-20 w-full
+  }
+
+  .pokemon-info-box {
+    @apply py-6 px-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg drop-shadow-lg sm:py-2 sm:flex sm:items-center sm:space-y-0 sm:space-x-2 w-full;
+  }
+
+  /* Utility */
+  .red-alert {
+    @apply bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg flex flex-col items-center;
+  }
 }
